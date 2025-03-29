@@ -7,7 +7,7 @@ export const Header = () => {
     <>
       <div style={{ display: 'flex' }}>
         <span>Title</span>
-        <TonConnectButton style={{ marginLeft: 'auto' }} />
+        {/* <TonConnectButton style={{ marginLeft: 'auto' }} /> */}
       </div>
       <div>
         {wallet && ('name' in wallet ? <>
