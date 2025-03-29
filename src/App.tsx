@@ -19,15 +19,6 @@ function App() {
       }}
     >
       <div className="app">
-        <h1>Привет, {user?.first_name || 'гость'}!</h1>
-        {user && (
-          <div>
-            <p>Твой Telegram ID: {user.id}</p>
-            <p>Логин: @{user.username || 'не указан'}</p>
-          </div>
-        )}
-
-        <button onClick={onClose}>Закрыть приложение</button>
 
         <MainPage />
       </div>
