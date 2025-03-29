@@ -1,10 +1,13 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import App from './App.tsx'
-import './index.css'
+import { Header } from "./components/Header"
+import { SendTx } from './components/SendTx';
+import { Settings } from './components/Settings';
 
-createRoot(document.getElementById('root')!).render(
-  <StrictMode>
-    <App />
-  </StrictMode>,
-)
+export const MainPage = () => {
+  return (
+    <div>
+      <Header />
+      <SendTx />
+      <Settings />
+    </div>
+  )
+}
