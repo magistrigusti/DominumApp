@@ -1,6 +1,6 @@
 
 
-export const HomePage = () => {
+export const Home = () => {
   return (
     <div>
       
