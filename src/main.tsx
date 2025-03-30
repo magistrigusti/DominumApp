@@ -1,16 +1,10 @@
-import { Header } from "./components/Header"
-import { SendTx } from './components/SendTx';
-import { Settings } from './components/Settings';
-// import { Home } from './pages/Home';
+import { StrictMode } from 'react'
+import { createRoot } from 'react-dom/client'
+import App from './App.tsx'
+import './index.css'
 
-export const MainPage = () => {
-  return (
-    <div>
-      <Header />
-      <SendTx />
-      {/* <Home /> */}
-      <Settings />
-      <div style={{color: 'white', background: 'black'}}>Hello, world!</div>
-    </div>
-  )
-}
+createRoot(document.getElementById('root')!).render(
+  <StrictMode>
+    <App />
+  </StrictMode>,
+)

@@ -1,6 +1,5 @@
 import { TonConnectUIProvider, THEME } from "@tonconnect/ui-react";
-import { MainPage } from "./main";
-
+import { MainPage } from "./MainPage";
 
 function App() {
   return (
@@ -11,19 +10,16 @@ function App() {
         borderRadius: 'none',
         colorsSet: {
           [THEME.DARK]: {
-            connectButton: { background: 'red' }
+            connectButton: {
+              background: 'red'
+            }
           }
         }
       }}
     >
-      
-      <div className="app">
-          <div style={{color: 'white', background: 'black'}}>Hello, world!</div>
-
-        <MainPage />
-      </div>
+      <MainPage />
     </TonConnectUIProvider>
-  );
+  )
 }
 
 export default App;

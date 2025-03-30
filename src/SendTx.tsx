@@ -1,7 +1,7 @@
 import { useTonConnectModal, useTonWallet, useTonConnectUI } from "@tonconnect/ui-react"
 import { SendTransactionRequest } from "@tonconnect/ui-react";
 import { Cell, beginCell, Address } from '@ton/core';
-import { waitForTransaction, getJettonWalletAddress } from '../tonapi.ts';
+import { waitForTransaction, getJettonWalletAddress } from './tonapi.ts';
 import { useState } from 'react';
 
 export const SendTx = () => {
@@ -20,7 +20,7 @@ export const SendTx = () => {
       .storeUint(0x0f8a7ea5, 32)
       .storeUint(0, 64)
       .storeCoins(1)
-      .storeAddress(Address.parse('UQBZbGdSzAacH29_ZMcEYXStR8q7nBB1bWeASoaw9Toi26Fr'))
+      .storeAddress(Address.parse('UQBH1A7LGcrv3_N61S3g_pnLY0bq5I6XUY18oh9wIpCfFq5o'))
       .storeAddress(Address.parse(wallet!.account.address))
       .storeMaybeRef()
       .storeCoins(0)
