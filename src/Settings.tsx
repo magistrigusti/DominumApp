@@ -31,9 +31,12 @@ export const Settings = () => {
         <option value='en'>en</option>
       </select>
 
-      <select value={theme} onChange={ e => setTheme(e.target.value)} >
-        <option value={THEME.DARK} >Dark</option>
-        <option value={THEME.LIGHT}>Light</option>
+      <select 
+        value={theme} 
+        onChange={e => setTheme(e.target.value as THEME)}
+      >
+        <option value={THEME.DARK}>Тёмная</option>
+        <option value={THEME.LIGHT}>Светлая</option>
       </select>
     </div>
   )
