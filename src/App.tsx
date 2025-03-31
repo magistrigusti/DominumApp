@@ -1,9 +1,8 @@
-import { useState } from 'react';
-import { TonConnectUIProvider, THEME } from "@tonconnect/ui-react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { useEffect } from "react";
+import { useTonWallet } from "@tonconnect/ui-react";
+import { Routes, Route, Navigate, useNavigate } from "react-router-dom";
 import { LoginPage } from "./pages/LoginPage/LoginPage";
 import { MenuPage } from "./pages/MenuPage/MenuPage";
-import { Header } from "./components/Header";
 import { PortalPage } from "./pages/PortalPage/PortalPage";
 import { DominumPage } from "./pages/DominumPage/DominumPage";
 import { MagisteriumPage } from "./pages/MagisteriumPage/MagisteriumPage";
@@ -11,46 +10,38 @@ import { MercatusPage } from "./pages/MercatusPage/MercatusPage";
 import { UserPage } from "./pages/UserPage/UserPage";
 
 function App() {
-  const [isConnected, setIsConnected] = useState(false);
+  const wallet = useTonWallet();
+  const isConnected = !!wallet?.account?.address;
+  const navigate = useNavigate();
+
+  // ✅ автоматическое перенаправление на / при подключении
+  useEffect(() => {
+    if (isConnected) {
+      navigate("/");
+    }
+  }, [isConnected]);
 
   return (
-    <TonConnectUIProvider
-      manifestUrl="https://ton-connect.github.io/demo-dapp-with-react-ui/tonconnect-manifest.json"
-      walletsListConfiguration={{}}
-      uiPreferences={{
-        borderRadius: 'none',
-        colorsSet: {
-          [THEME.DARK]: {
-            connectButton: {
-              background: 'orange'
-            }
-          }
-        }
-      }}
-    >
-      <Router>
-      <div className="fullscreen container">
-        <Header onWalletStatusChange={setIsConnected} />
+    <div className="fullscreen container">
+      <Routes>
+        {!isConnected && (
+          <Route path="*" element={<LoginPage />} />
+        )}
 
-        <Routes>
-          {!isConnected && <Route path="*" element={<LoginPage />} />}
-
-          {isConnected && (
-            <>
+        {isConnected && (
+          <>
             <Route path="/" element={<MenuPage />} />
             <Route path="/portal" element={<PortalPage />} />
             <Route path="/dominum" element={<DominumPage />} />
             <Route path="/magisterium" element={<MagisteriumPage />} />
-            <Route path="/mercatus" element={<MercatusPage />} />UserPage
+            <Route path="/mercatus" element={<MercatusPage />} />
             <Route path="/user" element={<UserPage />} />
+            <Route path="*" element={<Navigate to="/" />} />
           </>
-          )}
-        </Routes>
-      </div>
-      </Router>
-
-    </TonConnectUIProvider>
-  )
+        )}
+      </Routes>
+    </div>
+  );
 }
 
 export default App;

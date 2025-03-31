@@ -1,38 +1,22 @@
-import { TonConnectButton, useTonWallet, 
-  // toUserFriendlyAddress, CHAIN 
-} from "@tonconnect/ui-react"
-import { useEffect } from "react";
-import IconUser from "../../public/icons/user-icon.png";
+import { TonConnectButton, useTonWallet } from "@tonconnect/ui-react";
 import { Link } from "react-router-dom";
+import IconUser from "../../public/icons/user-icon.png";
 
-type HeaderProps = {
-  onWalletStatusChange: (connected: boolean) => void;
-};
-
-export const Header = ({ onWalletStatusChange }: HeaderProps) => {
+export const Header = () => {
   const wallet = useTonWallet();
-
-  useEffect(() => {
-    onWalletStatusChange(!!wallet);
-  }, [wallet]);
+  const isConnected = !!wallet?.account?.address;
 
   return (
-    <div
-      style={{
-        display: "flex",
-        alignItems: "center",
-        width: "80%",
-      }}
-    >
+    <div style={{ display: "flex", alignItems: "center", width: "80%" }}>
       <span style={{ fontWeight: "bold", fontSize: "18px" }}>
         Dominum meta space
       </span>
 
       <div style={{ marginLeft: "auto" }}>
-        {!wallet ? (
+        {!isConnected ? (
           <TonConnectButton />
         ) : (
-          <Link to="/user">
+          <Link to="/">
             <img
               src={IconUser}
               alt="User Profile"

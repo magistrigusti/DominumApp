@@ -1,5 +1,5 @@
-
-import { TonConnectButton } from "@tonconnect/ui-react";
+import { Link } from "react-router-dom";
+import IconUser from "../../../public/icons/user-icon.png";
 import { useNavigate } from "react-router-dom";
 import styles from "./MenuPage.module.css";
 
@@ -9,7 +9,15 @@ export const MenuPage = () => {
 
   return (
     <div className={styles.memu_containte} >
-      <TonConnectButton />
+      <Link to="/user">
+            <img className={styles.user_img}
+              src={IconUser}
+              alt="User Profile"
+            />
+
+            <p>Magistru</p>
+      </Link>
+      
       <h2>Welcome to the crypto space Dominum which is the entrance to the crypto meta universe Allodium</h2>
 
       <div className={styles.icon_grid}>
