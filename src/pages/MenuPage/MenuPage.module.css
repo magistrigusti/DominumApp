@@ -1,0 +1,23 @@
+.memu_containte {
+  background-color: #41447a;
+  padding: 20px;
+  text-align: center;
+}
+
+.icon_grid {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.icon {
+  width: 100px;
+  height: 100px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.icon:hover {
+  transform: scale(1.1);
+}
