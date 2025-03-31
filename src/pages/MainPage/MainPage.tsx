@@ -1,7 +1,8 @@
-import { Header } from "./Header"
-import { SendTx } from './SendTx';
-import { Settings } from './Settings';
+import { Header } from "../../Header"
+import { SendTx } from '../../SendTx';
+import { Settings } from '../../Settings';
 import bgImage from './assets/main-bg.jpg';
+import slyles from "./MainPage.module.css";
 
 export const MainPage = () => {
   return (
@@ -15,12 +16,11 @@ export const MainPage = () => {
       height: '100vh',               // высота на весь экран
       display: 'flex',
       flexDirection: 'column',
-      alignItems: 'center',
     }}
     >
       <Header />
-      <SendTx />
-      <Settings />
+      {/* <SendTx /> */} 
+      {/* <Settings /> */}
     </div>
   )
 }

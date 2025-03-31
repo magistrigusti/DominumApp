@@ -1,5 +1,5 @@
 import { TonConnectUIProvider, THEME } from "@tonconnect/ui-react";
-import { MainPage } from "./MainPage";
+import { MainPage } from "./pages/MainPage/MainPage";
 
 function App() {
   return (
