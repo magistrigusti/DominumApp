@@ -7,7 +7,11 @@ export const LoginPage = () => {
     <div>
       <TonConnectButton />
 
-      <h2>to go through connecting a wallet.</h2>
+      <h2>
+        Нou won't get through here unless 
+        <br />
+        you use a crypto wallet as a key.
+      </h2>
 
       <img src={ImgContract} alt="" />
       

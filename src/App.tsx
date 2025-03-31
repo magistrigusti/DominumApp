@@ -22,9 +22,11 @@ function App() {
         }
       }}
     >
-      <Header onWalletStatusChange={setIsConnected} />
+      <div className="fullscreen container">
+        <Header onWalletStatusChange={setIsConnected} />
 
-      {isConnected ? <MenuPage /> : <LoginPage />}
+        {isConnected ? <MenuPage /> : <LoginPage />}
+      </div>
     </TonConnectUIProvider>
   )
 }
