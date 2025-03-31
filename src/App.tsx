@@ -1,5 +1,7 @@
-import { TonConnectUIProvider, THEME } from "@tonconnect/ui-react";
-import { MainPage } from "./pages/MainPage/MainPage";
+import { TonConnectUIProvider, THEME, useTonWallet } from "@tonconnect/ui-react";
+import { LoginPage } from "./pages/LoginPage/LoginPage";
+import { MenuPage } from "./pages/MenuPages/MenuPages";
+import { Header } from "./components/Header";
 
 function App() {
   return (
@@ -17,7 +19,9 @@ function App() {
         }
       }}
     >
-      <MainPage />
+      <Header />
+
+      {wallet ? <MenuPage /> : <LoginPage />}
     </TonConnectUIProvider>
   )
 }

@@ -6,7 +6,7 @@ export const Header = () => {
   return (
     <>
       <div style={{ display: 'flex' }}>
-        <span>Title</span>
+        <span>Dominum meta spase</span>
         <TonConnectButton style={{ marginLeft: 'auto' }} />
       </div>
       <div>
