@@ -21,7 +21,7 @@ export const MenuPage = () => {
         />
         <img
           src="/icons/iconsMercatus.png"
-          alt="Portal"
+          alt="mercatus"
           className={styles.icon}
           onClick={goTo("/mercatus")}
         />
