@@ -1,19 +1,26 @@
-.memu_containte {
-  background-color: #41447a;
-  padding: 20px;
-  text-align: center;
+.ьутг_container {
+  width: 100%;
+  max-width: 100%; /* 👈 чтобы не было ограничения в 480px */
+  flex-grow: 1;    /* 👈 тянется на всё доступное пространство */
+  padding: 1rem;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
+
 
 .icon_grid {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   gap: 20px;
   margin-top: 30px;
 }
 
 .icon {
-  width: 100px;
-  height: 100px;
+  width: 180px;
+  height: 180px;
   cursor: pointer;
   transition: transform 0.2s ease;
 }

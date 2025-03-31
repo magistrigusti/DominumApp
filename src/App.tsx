@@ -4,9 +4,9 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { LoginPage } from "./pages/LoginPage/LoginPage";
 import { MenuPage } from "./pages/MenuPage/MenuPage";
 import { Header } from "./components/Header";
-// import { PortalPage } from "./pages/PortalPage/PortalPage";
-// import { DominumPage } from "./pages/DominumPage/DominumPage";
-// import { MagisteriumPage } from "./pages/MagisteriumPage/MagisteriumPage";
+import { PortalPage } from "./pages/PortalPage/PortalPage";
+import { DominumPage } from "./pages/DominumPage/DominumPage";
+import { MagisteriumPage } from "./pages/MagisteriumPage/MagisteriumPage";
 
 function App() {
   const [isConnected, setIsConnected] = useState(false);
@@ -36,9 +36,9 @@ function App() {
           {isConnected && (
             <>
             <Route path="/" element={<MenuPage />} />
-            {/* <Route path="/portal/*" element={<PortalPage />} />
+            <Route path="/portal/*" element={<PortalPage />} />
             <Route path="/dominum/*" element={<DominumPage />} />
-            <Route path="/magisterium/*" element={<MagisteriumPage />} /> */}
+            <Route path="/magisterium/*" element={<MagisteriumPage />} />
           </>
           )}
         </Routes>
