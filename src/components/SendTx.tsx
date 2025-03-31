@@ -1,7 +1,7 @@
 import { useTonConnectModal, useTonWallet, useTonConnectUI } from "@tonconnect/ui-react"
 import { SendTransactionRequest } from "@tonconnect/ui-react";
 import { Cell, beginCell, Address } from '@ton/core';
-import { waitForTransaction, getJettonWalletAddress } from './tonapi.ts';
+import { waitForTransaction, getJettonWalletAddress } from '../tonapi.ts';
 import { useState } from 'react';
 
 export const SendTx = () => {
