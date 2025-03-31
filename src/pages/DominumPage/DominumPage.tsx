@@ -1,11 +1,9 @@
-
-
-import {HomePage} from "../HomePage/HomePage";
+import mineBg from "../../assets/Dominum/astral_mine_ship.jpg"
 
 export const DominumPage = () => {
   return (
     <div>
-      <HomePage />
+      <img src={mineBg} alt="" />
     </div>
   )
 }
