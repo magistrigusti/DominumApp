@@ -1,4 +1,5 @@
-import { TonConnectButton } from "@tonconect/ui-react";
+import { TonConnectButton } from "@tonconnect/ui-react";
+
 
 export const LoginPage = () => {
   return (

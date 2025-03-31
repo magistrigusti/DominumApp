@@ -1,9 +1,12 @@
-import { TonConnectUIProvider, THEME, useTonWallet } from "@tonconnect/ui-react";
+import { useState } from 'react';
+import { TonConnectUIProvider, THEME } from "@tonconnect/ui-react";
 import { LoginPage } from "./pages/LoginPage/LoginPage";
-import { MenuPage } from "./pages/MenuPages/MenuPages";
+import { MenuPage } from "./pages/MenuPage/MenuPage";
 import { Header } from "./components/Header";
 
 function App() {
+  const [isConnected, setIsConnected] = useState(false);
+
   return (
     <TonConnectUIProvider
       manifestUrl="https://ton-connect.github.io/demo-dapp-with-react-ui/tonconnect-manifest.json"
@@ -19,9 +22,9 @@ function App() {
         }
       }}
     >
-      <Header />
+      <Header onWalletStatusChange={setIsConnected} />
 
-      {wallet ? <MenuPage /> : <LoginPage />}
+      {isConnected ? <MenuPage /> : <LoginPage />}
     </TonConnectUIProvider>
   )
 }
