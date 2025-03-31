@@ -1,11 +1,11 @@
 
-import styles from "../HomePage/HomePage.module.css";
+
+import {HomePage} from "../HomePage/HomePage";
 
 export const DominumPage = () => {
   return (
     <div>
-      <div className={styles.home_page}>
-      </div>
+      <HomePage />
     </div>
   )
 }

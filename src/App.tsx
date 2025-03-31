@@ -36,9 +36,9 @@ function App() {
           {isConnected && (
             <>
             <Route path="/" element={<MenuPage />} />
-            <Route path="/portal/*" element={<PortalPage />} />
-            <Route path="/dominum/*" element={<DominumPage />} />
-            <Route path="/magisterium/*" element={<MagisteriumPage />} />
+            <Route path="/portal" element={<PortalPage />} />
+            <Route path="/dominum" element={<DominumPage />} />
+            <Route path="/magisterium" element={<MagisteriumPage />} />
           </>
           )}
         </Routes>

@@ -1,4 +1,4 @@
-// import { HomePage } from "../HomePage/HomePage";
+
 import { TonConnectButton } from "@tonconnect/ui-react";
 import { useNavigate } from "react-router-dom";
 import styles from "./MenuPage.module.css";
