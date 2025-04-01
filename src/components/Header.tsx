@@ -1,6 +1,7 @@
 import { TonConnectButton, useTonWallet } from "@tonconnect/ui-react";
 import { Link } from "react-router-dom";
 import IconUser from "../../public/icons/user-icon.png";
+import DomLogo from "../../public/logo-dom.png";
 
 export const Header = () => {
   const wallet = useTonWallet();
@@ -8,9 +9,7 @@ export const Header = () => {
 
   return (
     <div style={{ display: "flex", alignItems: "center", width: "80%" }}>
-      <span style={{ fontWeight: "bold", fontSize: "18px" }}>
-        Dominum meta space
-      </span>
+      <img src={DomLogo} alt="" style={{width: '100px'}} />
 
       <div style={{ marginLeft: "auto" }}>
         {!isConnected ? (
