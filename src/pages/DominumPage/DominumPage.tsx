@@ -1,10 +1,10 @@
-import mineBg from "../../assets/Dominum/astral_mine_ship.jpg"
+
 import { Link } from "react-router-dom";
 
 export const DominumPage = () => {
   return (
     <div>
-      <img src={mineBg} alt="" />
+      <img src="/public/Dominum/astral_mine_ship.jpg" alt="" />
 
       {/* 🔙 Кнопка назад */}
       <div style={{ alignSelf: 'flex-start' }}>

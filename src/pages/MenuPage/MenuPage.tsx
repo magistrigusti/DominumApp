@@ -11,7 +11,13 @@ export const MenuPage = () => {
     <div className={styles.memu_containte} >
       <DOMHeader />
       
-      <h2>Welcome to the crypto space Dominum which is the entrance to the crypto meta universe Allodium</h2>
+      <h2 className={styles.menu_title}>
+        Welcome to the <br />
+        crypto space <br />
+        Dominum <br />
+        which is the entrance <br />
+        to the crypto meta universe Allodium
+      </h2>
 
       <div className={styles.icon_grid}>
       <img

@@ -33,3 +33,8 @@
   cursor: pointer;   
   width: 60%;       
 }
+
+.menu_title {
+  font-family: Helvetica, sans-serif;
+  color: rgba(11, 101, 175, 0.87);
+}
