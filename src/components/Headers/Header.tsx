@@ -1,7 +1,5 @@
 import { TonConnectButton, useTonWallet } from "@tonconnect/ui-react";
 import { Link } from "react-router-dom";
-import IconUser from "../../public/icons/user-icon.png";
-import DomLogo from "../../public/logo-dom.png";
 
 export const Header = () => {
   const wallet = useTonWallet();
@@ -9,15 +7,14 @@ export const Header = () => {
 
   return (
     <div style={{ display: "flex", alignItems: "center", width: "80%" }}>
-      <img src={DomLogo} alt="" style={{width: '100px'}} />
+      <img src="/public/icons/user-icon.png" alt="" style={{width: '100px'}} />
 
       <div style={{ marginLeft: "auto" }}>
         {!isConnected ? (
           <TonConnectButton />
         ) : (
           <Link to="/">
-            <img
-              src={IconUser}
+            <img src="/icons/user-icon.png"
               alt="User Profile"
               height="36px"
               width="36"

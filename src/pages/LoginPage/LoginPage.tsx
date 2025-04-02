@@ -1,6 +1,6 @@
 import { TonConnectButton } from "@tonconnect/ui-react";
-import ImgContract from "../../assets/contract_actral_island.png";
-import { Header } from "../../components/Header";
+import ImgContract from "../../../src/assets/contract_actral_island.png";
+import { Header } from "../../components/Headers/Header";
 import styles from "./LoginPage.module.css";
 
 export const LoginPage = () => {

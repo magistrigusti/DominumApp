@@ -1,7 +1,7 @@
-import { Link } from "react-router-dom";
-import IconUser from "../../../public/icons/user-icon.png";
+
 import { useNavigate } from "react-router-dom";
 import styles from "./MenuPage.module.css";
+import { DOMHeader }from "../../components/Headers/DOMHeader.tsx";
 
 export const MenuPage = () => {
   const navigate = useNavigate();
@@ -9,14 +9,7 @@ export const MenuPage = () => {
 
   return (
     <div className={styles.memu_containte} >
-      <Link to="/user">
-            <img className={styles.user_img}
-              src={IconUser}
-              alt="User Profile"
-            />
-
-            <p>Magistru</p>
-      </Link>
+      <DOMHeader />
       
       <h2>Welcome to the crypto space Dominum which is the entrance to the crypto meta universe Allodium</h2>
 
