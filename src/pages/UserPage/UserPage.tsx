@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
-import { TonConnectButton, useTonWallet, CHAIN } from "@tonconnect/ui-react";
+import { TonConnectButton, useTonWallet, CHAIN, toUserFriendlyAddress } from "@tonconnect/ui-react";
 import { Link } from "react-router-dom";
 import styles from "./UserPage.module.css";
 
 
-const formatAddress = (address: string) => {
-  return `${address.slice(0, 8)}...${address.slice(-8)}`;
+const formatAddress = (address: string, isTestnet: boolean) => {
+  const friendly = toUserFriendlyAddress(address, isTestnet);
+  return `${friendly.slice(0, 8)}...${friendly.slice(-8)}`;
 };
-
 
 export const UserPage = () => {
   const wallet = useTonWallet();
@@ -63,8 +63,7 @@ export const UserPage = () => {
       <div style={{ textAlign: 'center' }}>
         {wallet && (
           <>
-            <p><strong>Кошелёк:</strong> {formatAddress(wallet.account.address)}</p>
-
+            <p><strong>Кошелёк:</strong> {formatAddress(wallet.account.address, wallet.account.chain === CHAIN.TESTNET)}</p>
             <p><strong>Сеть:</strong> {wallet.account.chain === CHAIN.TESTNET ? "Testnet" : "Mainnet"}</p>
             <p><strong>Баланс:</strong> {tonBalance ?? 'Загрузка...'}</p>
           </>
