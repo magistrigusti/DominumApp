@@ -1,8 +1,31 @@
-import { TonConnectButton } from "@tonconnect/ui-react";
+import { useEffect, useState } from "react";
+import { TonConnectButton, useTonWallet, CHAIN } from "@tonconnect/ui-react";
+// import { TonConnect } from "@tonconnect/sdk";
 import { Link } from "react-router-dom";
 import styles from "./UserPage.module.css";
 
+// const tonConnect = new TonConnect();
+
 export const UserPage = () => {
+  const wallet = useTonWallet();
+  const [tonBalance, setTonBalance] = useState<string | null>(null);
+
+  useEffect(() => {
+    const fetchBalance = async () => {
+      if (wallet?.account?.address) {
+        const response = await fetch(`https://toncenter.com/api/v2/getAddressBalance?address=${wallet.account.address}`);
+        const data = await response.json();
+
+        if (data.ok) {
+          const tons = parseFloat(data.result) / 1e9;
+          setTonBalance(tons.toFixed(4) + " TON");
+        }
+      }
+    };
+
+    fetchBalance();
+  }, [wallet]);
+
   return (
     <div style={{
       padding: '1rem',
@@ -17,10 +40,9 @@ export const UserPage = () => {
           alt="User Profile"
         />
 
-        <p>Magistru</p>
+        <p>{wallet?.account?.address ? "Magistru" : "Не подключено"}</p>
       </div>
 
-      {/* 🔙 Кнопка назад */}
       <div style={{ alignSelf: 'flex-start' }}>
         <Link to="/" style={{
           textDecoration: 'none',
@@ -34,7 +56,18 @@ export const UserPage = () => {
         </Link>
       </div>
 
-      {/* 🔐 Кнопка TonConnect */}
+      {/* Кошелёк */}
+      <div style={{ textAlign: 'center' }}>
+        {wallet && (
+          <>
+            <p><strong>Кошелёк:</strong> {wallet.account.address}</p>
+            <p><strong>Сеть:</strong> {wallet.account.chain === CHAIN.TESTNET ? "Testnet" : "Mainnet"}</p>
+            <p><strong>Баланс:</strong> {tonBalance ?? 'Загрузка...'}</p>
+          </>
+        )}
+      </div>
+
+      {/* Кнопка подключения */}
       <TonConnectButton />
     </div>
   );
