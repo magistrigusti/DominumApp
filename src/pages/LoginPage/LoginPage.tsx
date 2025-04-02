@@ -10,7 +10,7 @@ export const LoginPage = () => {
 
       <h4 className={styles.login_title}>Dominum Space</h4>
 
-      <img src="/public/img/contract_actral_island.png" alt="" />
+      <img src="/img/contract_actral_island.png" alt="" />
 
       <p className={styles.login_text}>
         You won't get through here unless <br />
