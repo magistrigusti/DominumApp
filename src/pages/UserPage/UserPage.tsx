@@ -1,5 +1,6 @@
 import { TonConnectButton } from "@tonconnect/ui-react";
 import { Link } from "react-router-dom";
+import styles from "./UserPage.module.css";
 
 export const UserPage = () => {
   return (
@@ -10,6 +11,15 @@ export const UserPage = () => {
       alignItems: 'center',
       gap: '1rem',
     }}>
+      <div className={styles.user_header_wrapper}>
+        <img className={styles.user_img}
+          src="/icons/user-icon.png"
+          alt="User Profile"
+        />
+
+        <p>Magistru</p>
+      </div>
+
       {/* 🔙 Кнопка назад */}
       <div style={{ alignSelf: 'flex-start' }}>
         <Link to="/" style={{
