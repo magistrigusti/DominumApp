@@ -1,4 +1,4 @@
-import Work from "../../assets/workering.png";
+
 import { Link } from "react-router-dom";
 // import styles from "./HomePage.module.css";
 
@@ -7,7 +7,7 @@ export const HomePage = () => {
     <div>
       <h5>We build without weekends and holidays. Follow the news</h5>
 
-      <img src={Work} alt="" />
+      <img src="/public/img/workering.png" alt="" />
 
       {/* 🔙 Кнопка назад */}
       <div style={{ alignSelf: 'flex-start' }}>

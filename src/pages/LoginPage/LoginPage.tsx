@@ -1,5 +1,4 @@
 import { TonConnectButton } from "@tonconnect/ui-react";
-import ImgContract from "../../../src/assets/contract_actral_island.png";
 import { Header } from "../../components/Headers/Header";
 import styles from "./LoginPage.module.css";
 
@@ -11,7 +10,7 @@ export const LoginPage = () => {
 
       <h4 className={styles.login_title}>Dominum Space</h4>
 
-      <img src={ImgContract} alt="" />
+      <img src="/public/img/contract_actral_island.png" alt="" />
 
       <p className={styles.login_text}>
         You won't get through here unless <br />

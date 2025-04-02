@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 export const DominumPage = () => {
   return (
     <div>
-      <img src="/public/Dominum/astral_mine_ship.jpg" alt="" />
+      <img src="/public/Dominum/ship-1.jpg" alt="" />
 
       {/* 🔙 Кнопка назад */}
       <div style={{ alignSelf: 'flex-start' }}>
