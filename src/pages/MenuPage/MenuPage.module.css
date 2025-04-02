@@ -18,17 +18,6 @@
   margin-top: 30px;
 }
 
-.icon {
-  width: 180px;
-  height: 180px;
-  cursor: pointer;
-  transition: transform 0.2s ease;
-}
-
-.icon:hover {
-  transform: scale(1.1);
-}
-
 .user_img {
   cursor: pointer;   
   width: 60%;       
@@ -37,4 +26,15 @@
 .menu_title {
   font-family: Helvetica, sans-serif;
   color: rgba(11, 101, 175, 0.87);
+}
+
+.icon {
+  width: 160px;
+  height: 160px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.icon:hover {
+  transform: scale(1.1);
 }
