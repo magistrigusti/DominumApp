@@ -7,7 +7,7 @@ export const DominumPage = () => {
     <div>
       <DOMHeader />
 
-      <img src="/public/Dominum/ship-1.jpg" alt="" />
+      <img src="/Dominum/ship-1.jpg" alt="" />
 
       <DOMFooter />
     </div>

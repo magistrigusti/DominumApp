@@ -7,7 +7,7 @@ export const HomePage = () => {
     <div>
       <h5>We build without weekends and holidays. Follow the news</h5>
 
-      <img src="/public/img/workering.png" alt="" />
+      <img src="/img/workering.png" alt="" />
 
       {/* 🔙 Кнопка назад */}
       <div style={{ alignSelf: 'flex-start' }}>

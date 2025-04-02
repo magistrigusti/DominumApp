@@ -10,31 +10,31 @@ export const DOMFooter = () => {
       <div className={styles.user_header_wrapper}>
         <Link className={styles.user_link} to="">
           <img className={styles.footer_img_button} 
-            src="/public/button/lordButton.jpg" alt="" 
+            src="/button/lordButton.jpg" alt="" 
           />
         </Link>
 
         <Link className={styles.user_link} to="">
           <img className={styles.footer_img_button} 
-            src="/public/button/lordButton.jpg" alt="" 
+            src="/button/lordButton.jpg" alt="" 
           />
         </Link>
 
         <Link className={styles.user_link} to="">
           <img className={styles.footer_img_button} 
-            src="/public/button/lordButton.jpg" alt="" 
+            src="/button/lordButton.jpg" alt="" 
           />
         </Link>
 
         <Link className={styles.user_link} to="">
           <img className={styles.footer_img_button} 
-            src="/public/button/lordButton.jpg" alt="" 
+            src="/button/lordButton.jpg" alt="" 
           />
         </Link>
 
         <Link className={styles.user_link} to="">
           <img className={styles.footer_img_button} 
-            src="/public/button/lordButton.jpg" alt="" 
+            src="/button/lordButton.jpg" alt="" 
           />
         </Link>
       </div>
