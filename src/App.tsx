@@ -22,26 +22,29 @@ function App() {
   }, [isConnected]);
 
   return (
-    <div className="fullscreen container">
-      <Routes>
-        {!isConnected && (
-          <Route path="*" element={<LoginPage />} />
-        )}
-
-        {isConnected && (
-          <>
-            <Route path="/" element={<MenuPage />} />
-            <Route path="/portal" element={<PortalPage />} />
-            <Route path="/dominum" element={<DominumPage />} />
-            <Route path="/magisterium" element={<MagisteriumPage />} />
-            <Route path="/mercatus" element={<MercatusPage />} />
-            <Route path="/user" element={<UserPage />} />
-            <Route path="*" element={<Navigate to="/" />} />
-          </>
-        )}
-      </Routes>
+    <div className="app"> {/* ✅ добавляем обёртку */}
+      <div className="page fullscreen container"> {/* ✅ это центр страницы */}
+        <Routes>
+          {!isConnected && (
+            <Route path="*" element={<LoginPage />} />
+          )}
+  
+          {isConnected && (
+            <>
+              <Route path="/" element={<MenuPage />} />
+              <Route path="/portal" element={<PortalPage />} />
+              <Route path="/dominum" element={<DominumPage />} />
+              <Route path="/magisterium" element={<MagisteriumPage />} />
+              <Route path="/mercatus" element={<MercatusPage />} />
+              <Route path="/user" element={<UserPage />} />
+              <Route path="*" element={<Navigate to="/" />} />
+            </>
+          )}
+        </Routes>
+      </div>
     </div>
   );
+  
 }
 
 export default App;

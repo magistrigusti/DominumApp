@@ -7,7 +7,8 @@ export const DOMHeader = () => {
   // const isConnected = !!wallet?.account?.address;
 
   return (
-    <div>
+    <div style={{ display: "flex", alignItems: "center", width: "80%"}}>
+
       <div className={styles.user_header_wrapper}>
         <Link className={styles.user_link} to="/user">
           <img className={styles.user_img}
@@ -18,17 +19,8 @@ export const DOMHeader = () => {
           <p>Magistru</p>
         </Link>
 
-        <Link to="/" style={{
-          textDecoration: 'none',
-          color: '#fff',
-          fontSize: '1rem',
-          display: 'flex',
-          alignItems: 'center',
-          gap: '0.5rem',
-        }}>
-          <span style={{ fontSize: '1.5rem' }}>←</span> Назад
-        </Link>
-
+      
+        
       </div>
     </div>
   );
