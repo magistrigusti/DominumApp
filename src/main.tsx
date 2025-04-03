@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import App from './App.tsx';
 import { TonConnectUIProvider, THEME } from '@tonconnect/ui-react';
 import { BrowserRouter } from 'react-router-dom';
+import { UserProvider } from './context/UserContext';
 import './index.css';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
@@ -17,10 +18,13 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
       }
     }}
   >
-    <BrowserRouter> {/* 👈 теперь Router оборачивает App */}
-      <React.StrictMode>
-        <App />
-      </React.StrictMode>
+    <BrowserRouter>
+      <UserProvider>
+        <React.StrictMode>
+          <App />
+        </React.StrictMode>
+      </UserProvider>
+
     </BrowserRouter>
   </TonConnectUIProvider>
 );
