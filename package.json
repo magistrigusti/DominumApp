@@ -1,13 +1,13 @@
 {
-  "name": "ton-conect-react-vite",
+  "name": "dominum-space",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc -b && vite build",
+    "dev": "next dev",
+    "build": "next build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "start": "next start"
   },
   "dependencies": {
     "@dedust/sdk": "^0.8.7",
@@ -41,9 +41,7 @@
     "globals": "^15.9.0",
     "ts-node-dev": "^2.0.0",
     "typescript": "^5.8.2",
-    "typescript-eslint": "^8.0.1",
-    "vite": "^5.4.1",
-    "vite-plugin-node-polyfills": "^0.22.0"
+    "typescript-eslint": "^8.0.1"
   },
   "description": "This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.",
   "main": "eslint.config.js",
