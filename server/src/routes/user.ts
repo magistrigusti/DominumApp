@@ -1,21 +1,35 @@
-import express from "express";
-import { User} from "../models/UserModel";
+// server/src/routes/user.ts
 
-const userRoutes = express.Router();
+import express from 'express'
+import { UserModel } from '../models/UserModel'
 
-userRoutes.post('/user', async (req, res) => {
-  const { address } = req.body;
+const router = express.Router()
 
-  if (!address) return res.status(400).send('Address is required');
+// POST /api/user — создать пользователя или вернуть, если уже есть
+router.post('/', async (req, res) => {
+  const { address } = req.body
 
-  let user = await User.findOne({ address });
-
-  if (!user) {
-    user = new User({ address });
-    await user.save();
+  if (!address) {
+    return res.status(400).json({ error: 'Address is required' })
   }
 
-  res.json(user);
-});
+  try {
+    let user = await UserModel.findOne({ address })
 
-export default userRoutes;
+    if (!user) {
+      user = await UserModel.create({
+        address,
+        avatar: '/icons/user-icon.png',
+        prestige: '0'
+        // Остальные поля — по умолчанию в схеме
+      })
+    }
+
+    res.status(200).json(user)
+  } catch (err) {
+    console.error('[user.ts] Ошибка:', err)
+    res.status(500).json({ error: 'Server error' })
+  }
+})
+
+export default router
