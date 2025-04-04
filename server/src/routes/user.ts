@@ -1,12 +1,9 @@
-// server/src/routes/user.ts
-
-import express from 'express'
+import { Router, Request, Response } from 'express'
 import { UserModel } from '../models/UserModel'
 
-const router = express.Router()
+export const userRoutes = Router()
 
-// POST /api/user — создать пользователя или вернуть, если уже есть
-router.post('/', async (req, res) => {
+userRoutes.post('/', async (req: Request, res: Response) => {
   const { address } = req.body
 
   if (!address) {
@@ -21,15 +18,12 @@ router.post('/', async (req, res) => {
         address,
         avatar: '/icons/user-icon.png',
         prestige: '0'
-        // Остальные поля — по умолчанию в схеме
       })
     }
 
-    res.status(200).json(user)
+    return res.status(200).json(user)
   } catch (err) {
     console.error('[user.ts] Ошибка:', err)
-    res.status(500).json({ error: 'Server error' })
+    return res.status(500).json({ error: 'Server error' })
   }
 })
-
-export default router
