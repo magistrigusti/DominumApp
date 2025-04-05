@@ -1,6 +1,4 @@
 {
-  "projects": {},
-  "rewrites": [],
   "builds": [
     {
       "src": "client/package.json",
