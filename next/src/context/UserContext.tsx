@@ -71,3 +71,4 @@ export const useUser = () => {
   if (!context) throw new Error("useUser must be inside <UserProvider>");
   return context;
 };
+ 

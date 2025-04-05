@@ -1,5 +1,5 @@
 import { Router, Request, Response } from 'express'
-import { UserModel } from '../models/UserModel'
+import { UserModel } from '../../models/UserModel'
 
 const router = Router()
 
@@ -16,7 +16,7 @@ router.post('/', async (req: Request, res: Response) => {
     if (!user) {
       user = await UserModel.create({
         address,
-        avatar: '/icons/user-icon.png',
+        avatar: '/icons/user-icon.png', 
         prestige: '0',
       })
     }
