@@ -1,9 +1,9 @@
 import { Router, Request, Response } from 'express'
 import { UserModel } from '../models/UserModel'
 
-export const userRoutes = Router()
+const router = Router()
 
-userRoutes.post('/', async (req: Request, res: Response) => {
+router.post('/', async (req: Request, res: Response) => {
   const { address } = req.body
 
   if (!address) {
@@ -17,7 +17,7 @@ userRoutes.post('/', async (req: Request, res: Response) => {
       user = await UserModel.create({
         address,
         avatar: '/icons/user-icon.png',
-        prestige: '0'
+        prestige: '0',
       })
     }
 
@@ -27,3 +27,5 @@ userRoutes.post('/', async (req: Request, res: Response) => {
     return res.status(500).json({ error: 'Server error' })
   }
 })
+
+export const userRoutes = router // ☑️ Только именованный экспорт
