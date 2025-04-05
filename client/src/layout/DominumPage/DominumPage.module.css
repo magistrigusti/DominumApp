@@ -1,9 +1,23 @@
-.page_wrapper {
+.icons_wrapper {
   display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap; /* на мобилке не уедет за экран */
+  padding: 0.5rem 1rem;
+  background-color: rgba(255, 255, 255, 0.05);
 }
 
-.page_content {
-  flex: 1;
+.resource_item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin: 4px;
+  color: white;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.resource_item img {
+  width: 24px;
+  height: 24px;
 }

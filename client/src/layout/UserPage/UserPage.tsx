@@ -54,7 +54,7 @@ export const UserPage = () => {
 
       <div className={styles.user_wrapper}>
         <h2>Профиль</h2>
-        <p><strong>Адрес:</strong> {state.address}</p>
+        {/* <p><strong>Адрес:</strong> {state.address}</p> */}
         <p><strong>Prestige:</strong> {state.prestige}</p>
         <p><strong>Food:</strong> {state.food}</p>
         <p><strong>Wood:</strong> {state.wood}</p>

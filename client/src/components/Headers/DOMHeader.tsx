@@ -19,7 +19,7 @@ export const DOMHeader = () => {
           <p>Magistru</p>
         </Link>
 
-      
+        
         
       </div>
     </div>
