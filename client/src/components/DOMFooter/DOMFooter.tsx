@@ -32,26 +32,14 @@ export const DOMFooter = () => {
           />
         </Link>
 
-        <Link className={styles.user_link} to="">
+        <Link className={styles.user_link} to="/">
           <img className={styles.footer_img_button} 
-            src="/button/lordButton.jpg" alt="" 
+            src="/button/backButton.jpg" alt="" 
           />
         </Link>
       </div>
 
-        {/* 🔙 Кнопка назад */}
-        <div style={{ alignSelf: 'flex-start' }}>
-        <Link to="/" style={{
-          textDecoration: 'none',
-          color: '#fff',
-          fontSize: '1.2rem',
-          display: 'flex',
-          alignItems: 'center',
-          gap: '0.5rem',
-        }}>
-          <span style={{ fontSize: '1.5rem' }}>←</span> Назад
-        </Link>
-      </div>
+      
     </div>
   );
 };

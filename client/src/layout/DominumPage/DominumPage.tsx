@@ -1,15 +1,15 @@
-
-import { DOMHeader } from "../../components/Headers/DOMHeader.tsx";
-import { DOMFooter } from "../../components/DOMFooter/DOMFooter.tsx";
+import styles from "./DominumPage.module.css";
+import { DOMHeader } from "../../components/Headers/DOMHeader";
+import { DOMFooter } from "../../components/DOMFooter/DOMFooter";
 
 export const DominumPage = () => {
   return (
-    <div>
+    <div className={styles.page_wrapper}>
       <DOMHeader />
-
-      <img src="/Dominum/ship-1.jpg" alt="" />
-
+      <div className={styles.page_content}>
+        <img src="/Dominum/ship-1.jpg" alt="icon" />
+      </div>
       <DOMFooter />
     </div>
-  )
-}
+  );
+};

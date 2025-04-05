@@ -32,13 +32,7 @@ export const UserPage = () => {
   }, [wallet]);
 
   return (
-    <div style={{
-      padding: '1rem',
-      display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'center',
-      gap: '1rem',
-    }}>
+    <div className={styles.user_container}>
       <div className={styles.user_header_wrapper}>
         <img className={styles.user_img}
           src="/icons/user-icon.png"
@@ -46,6 +40,29 @@ export const UserPage = () => {
         />
 
         <p>{wallet?.account?.address ? "Magistru" : "Не подключено"}</p>
+      </div>
+
+      <div style={{ textAlign: 'center' }}>
+        {wallet && (
+          <>
+            <p><strong>Кошелёк:</strong> {formatAddress(wallet.account.address, wallet.account.chain === CHAIN.TESTNET)}</p>
+            <p><strong>Сеть:</strong> {wallet.account.chain === CHAIN.TESTNET ? "Testnet" : "Mainnet"}</p>
+            <p><strong>Баланс:</strong> {tonBalance ?? 'Загрузка...'}</p>
+          </>
+        )}
+      </div>      
+
+      <div className={styles.user_wrapper}>
+        <h2>Профиль</h2>
+        <p><strong>Адрес:</strong> {state.address}</p>
+        <p><strong>Prestige:</strong> {state.prestige}</p>
+        <p><strong>Food:</strong> {state.food}</p>
+        <p><strong>Wood:</strong> {state.wood}</p>
+        <p><strong>Stone:</strong> {state.stone}</p>
+        <p><strong>Iron:</strong> {state.iron}</p>
+        <p><strong>Gold:</strong> {state.gold}</p>
+        <p><strong>Doubloon:</strong> {state.doubloon}</p>
+        <p><strong>Pearl:</strong> {state.pearl}</p>
       </div>
 
       <div style={{ alignSelf: 'flex-start' }}>
@@ -61,31 +78,7 @@ export const UserPage = () => {
         </Link>
       </div>
 
-      {/* Кошелёк */}
-      <div style={{ textAlign: 'center' }}>
-        {wallet && (
-          <>
-            <p><strong>Кошелёк:</strong> {formatAddress(wallet.account.address, wallet.account.chain === CHAIN.TESTNET)}</p>
-            <p><strong>Сеть:</strong> {wallet.account.chain === CHAIN.TESTNET ? "Testnet" : "Mainnet"}</p>
-            <p><strong>Баланс:</strong> {tonBalance ?? 'Загрузка...'}</p>
-          </>
-        )}
-      </div>
-
-      {/* Кнопка подключения */}      <TonConnectButton />
-
-      <div className={styles.user_wrapper}>
-        <h2>Профиль</h2>
-        <p><strong>Адрес:</strong> {state.address}</p>
-        <p><strong>Prestige:</strong> {state.prestige}</p>
-        <p><strong>Food:</strong> {state.food}</p>
-        <p><strong>Wood:</strong> {state.wood}</p>
-        <p><strong>Stone:</strong> {state.stone}</p>
-        <p><strong>Iron:</strong> {state.iron}</p>
-        <p><strong>Gold:</strong> {state.gold}</p>
-        <p><strong>Doubloon:</strong> {state.doubloon}</p>
-        <p><strong>Pearl:</strong> {state.pearl}</p>
-      </div>
+      <TonConnectButton />
     </div>
   );
 };
