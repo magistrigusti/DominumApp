@@ -6,7 +6,7 @@
     "server"
   ],
   "scripts": {
-    "dev:client": "yarn workspace client dev",
+    "dev:client": "yarn workspace dominum-client dev",
     "dev:server": "yarn workspace server dev",
     "dev": "concurrently \"yarn dev:client\" \"yarn dev:server\""
   },
