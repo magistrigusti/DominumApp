@@ -23,6 +23,16 @@ export default function Index() {
     }
   }, []);
 
+  if (!route) {
+    return (
+      <div className="app">
+        <div className="page fullscreen container">
+          <div className="loader">Loading....</div>
+        </div>
+      </div>
+    )
+  }
+
   if (!isConnected) {
     return (
       <div className="app">
@@ -51,7 +61,7 @@ export default function Index() {
     case "/portal":
       PageToRender = <PortalPage />;
       break;
-    case "user":
+    case "/user":
       PageToRender = <UserContainer />;
       break;
     default:
