@@ -1,7 +1,7 @@
 
 import { useNavigate } from "react-router-dom";
 import styles from "./MenuPage.module.css";
-import { DOMHeader }from "../../components/Headers/DOMHeader.tsx";
+import { DOMHeader }from "../../components/Headers/DOMHeader";
 
 
 export const MenuPage = () => {
