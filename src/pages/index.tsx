@@ -8,7 +8,6 @@ import { DominumPage } from "@/pages/DominumPage/DominumPage";
 import { MagisteriumPage } from "@/pages/MagisteriumPage/MagisteriumPage";
 import { MercatusPage } from "@/pages/MercatusPage/MercatusPage";
 import { UserContainer } from "@/pages/UserPage/UserContainer";
-import '@/styles/index.css'; 
 
 export default function Index() {
   const wallet = useTonWallet();

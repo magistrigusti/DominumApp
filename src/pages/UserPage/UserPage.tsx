@@ -1,9 +1,8 @@
 import { useEffect, useState } from "react";
 import { TonConnectButton, useTonWallet, CHAIN, toUserFriendlyAddress } from "@tonconnect/ui-react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { useUser } from "../../context/UserContext";
 import styles from "./UserPage.module.css";
-
 
 const formatAddress = (address: string, isTestnet: boolean) => {
   const friendly = toUserFriendlyAddress(address, isTestnet);
@@ -50,11 +49,10 @@ export const UserPage = () => {
             <p><strong>Баланс:</strong> {tonBalance ?? 'Загрузка...'}</p>
           </>
         )}
-      </div>      
+      </div>
 
       <div className={styles.user_wrapper}>
         <h2>Профиль</h2>
-        {/* <p><strong>Адрес:</strong> {state.address}</p> */}
         <p><strong>Prestige:</strong> {state.prestige}</p>
         <p><strong>Food:</strong> {state.food}</p>
         <p><strong>Wood:</strong> {state.wood}</p>
@@ -66,7 +64,7 @@ export const UserPage = () => {
       </div>
 
       <div style={{ alignSelf: 'flex-start' }}>
-        <Link to="/" style={{
+        <Link href="/" style={{
           textDecoration: 'none',
           color: '#fff',
           fontSize: '1.2rem',

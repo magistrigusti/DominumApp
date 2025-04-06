@@ -2,7 +2,8 @@
 import type { AppProps } from 'next/app';
 import { TonConnectUIProvider, THEME } from '@tonconnect/ui-react';
 import { UserProvider } from '@/context/UserContext';
-import './index.css'; 
+import '@/styles/index.css';
+
 
 export default function App({ Component, pageProps }: AppProps) {
   return (

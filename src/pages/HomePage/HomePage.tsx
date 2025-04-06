@@ -1,5 +1,4 @@
-
-import { Link } from "react-router-dom";
+import Link from "next/link";
 // import styles from "./HomePage.module.css";
 
 export const HomePage = () => {
@@ -11,7 +10,7 @@ export const HomePage = () => {
 
       {/* 🔙 Кнопка назад */}
       <div style={{ alignSelf: 'flex-start' }}>
-        <Link to="/" style={{
+        <Link href="/" style={{
           textDecoration: 'none',
           color: '#fff',
           fontSize: '1.2rem',

@@ -1,17 +1,16 @@
-
-import { useNavigate } from "react-router-dom";
+import { useRouter } from "next/router";
 import styles from "./MenuPage.module.css";
-import { DOMHeader }from "../../components/Headers/DOMHeader";
-
+import { DOMHeader } from "../../components/Headers/DOMHeader";
 
 export const MenuPage = () => {
-  const navigate = useNavigate();
-  const goTo = (path: string) => () => navigate(path);
+  const router = useRouter();
+
+  const goTo = (path: string) => () => router.push(path);
 
   return (
-    <div className={styles.memu_containte} >
+    <div className={styles.memu_containte}>
       <DOMHeader />
-      
+
       <h2 className={styles.menu_title}>
         Welcome to the <br />
         crypto space <br />
@@ -21,7 +20,7 @@ export const MenuPage = () => {
       </h2>
 
       <div className={styles.icon_grid}>
-      <img
+        <img
           src="/icons/iconsDominum.png"
           alt="Dominum"
           className={styles.icon}
@@ -39,7 +38,7 @@ export const MenuPage = () => {
           className={styles.icon}
           onClick={goTo("/magisterium")}
         />
-                <img
+        <img
           src="/icons/iconsPortale.png"
           alt="Portal"
           className={styles.icon}
@@ -47,5 +46,5 @@ export const MenuPage = () => {
         />
       </div>
     </div>
-  )
-}
+  );
+};
