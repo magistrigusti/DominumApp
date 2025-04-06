@@ -9,6 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@ton-api/client": "^0.4.0",
+    "@ton/core": "^0.60.1",
     "@tonconnect/ui-react": "^2.1.0",
     "mongoose": "^8.13.2",
     "next": "^15.2.4",
