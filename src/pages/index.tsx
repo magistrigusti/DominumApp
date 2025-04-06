@@ -4,7 +4,7 @@ import { TonConnectUIProvider, THEME } from '@tonconnect/ui-react';
 import { UserProvider } from '@/context/UserContext';
 import './index.css'; 
 
-export default function MyApp({ Component, pageProps }: AppProps) {
+export default function App({ Component, pageProps }: AppProps) {
   return (
     <TonConnectUIProvider
       manifestUrl="https://ton-connect.github.io/demo-dapp-with-react-ui/tonconnect-manifest.json"
