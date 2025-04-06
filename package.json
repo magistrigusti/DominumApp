@@ -10,11 +10,13 @@
   },
   "dependencies": {
     "@tonconnect/ui-react": "^2.1.0",
+    "mongoose": "^8.13.2",
     "next": "^15.2.4",
     "react": "^19.1.0",
     "react-dom": "^19.1.0"
   },
   "devDependencies": {
+    "@types/mongoose": "^5.11.97",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",

@@ -1,31 +1,34 @@
-import { Router, Request, Response } from 'express'
-import { UserModel } from '../../models/UserModel'
+import type { NextApiRequest, NextApiResponse } from 'next';
+import dbConnect from '@/lib/dbConnect';
+import { UserModel } from '@/models/UserModel';
 
-const router = Router()
+export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+  if (req.method !== 'POST') {
+    return res.status(405).json({ error: 'Method Not Allowed' });
+  }
 
-router.post('/', async (req: Request, res: Response) => {
-  const { address } = req.body
+  const { address } = req.body;
 
   if (!address) {
-    return res.status(400).json({ error: 'Address is required' })
+    return res.status(400).json({ error: 'Address is required' });
   }
 
   try {
-    let user = await UserModel.findOne({ address })
+    await dbConnect(); // ✅ Подключение через твою кэшируемую функцию
+
+    let user = await UserModel.findOne({ address });
 
     if (!user) {
       user = await UserModel.create({
         address,
-        avatar: '/icons/user-icon.png', 
+        avatar: '/icons/user-icon.png',
         prestige: '0',
-      })
+      });
     }
 
-    return res.status(200).json(user)
+    return res.status(200).json(user);
   } catch (err) {
-    console.error('[user.ts] Ошибка:', err)
-    return res.status(500).json({ error: 'Server error' })
+    console.error('[api/user] Ошибка:', err);
+    return res.status(500).json({ error: 'Server error' });
   }
-})
-
-export const userRoutes = router // ☑️ Только именованный экспорт
+}
