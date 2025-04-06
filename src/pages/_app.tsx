@@ -1,50 +1,25 @@
-import { useEffect } from "react";
-import { useTonWallet } from "@tonconnect/ui-react";
-import { Routes, Route, Navigate, useNavigate } from "react-router-dom";
-import { LoginPage } from "./LoginPage/LoginPage";
-import { MenuPage } from "./MenuPage/MenuPage";
-import { PortalPage } from "./PortalPage/PortalPage";
-import { DominumPage } from "./DominumPage/DominumPage";
-import { MagisteriumPage } from "./MagisteriumPage/MagisteriumPage";
-import { MercatusPage } from "./MercatusPage/MercatusPage";
-import { UserContainer } from "./UserPage/UserContainer";
+// next/src/pages/_app.tsx
+import type { AppProps } from 'next/app';
+import { TonConnectUIProvider, THEME } from '@tonconnect/ui-react';
+import { UserProvider } from '@/context/UserContext';
 import './index.css'; 
 
-function App() {
-  const wallet = useTonWallet();
-  const isConnected = !!wallet?.account?.address;
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    if (isConnected) {
-      navigate("/");
-    }
-  }, [isConnected]);
-
+export default function App({ Component, pageProps }: AppProps) {
   return (
-    <div className="app"> {/* ✅ добавляем обёртку */}
-      <div className="page fullscreen container"> {/* ✅ это центр страницы */}
-        <Routes>
-          {!isConnected && (
-            <Route path="*" element={<LoginPage />} />
-          )}
-  
-          {isConnected && (
-            <>
-              <Route path="/" element={<MenuPage />} />
-              <Route path="/portal" element={<PortalPage />} />
-              <Route path="/dominum" element={<DominumPage />} />
-              <Route path="/magisterium" element={<MagisteriumPage />} />
-              <Route path="/mercatus" element={<MercatusPage />} />
-              <Route path="/user" element={<UserContainer />} />
-              <Route path="*" element={<Navigate to="/" />} />
-            </>
-          )}
-        </Routes>
-      </div>
-    </div>
+    <TonConnectUIProvider
+      manifestUrl="https://ton-connect.github.io/demo-dapp-with-react-ui/tonconnect-manifest.json"
+      uiPreferences={{
+        borderRadius: 'none',
+        colorsSet: {
+          [THEME.DARK]: {
+            connectButton: { background: 'orange' }
+          }
+        }
+      }}
+    >
+      <UserProvider>
+        <Component {...pageProps} />
+      </UserProvider>
+    </TonConnectUIProvider>
   );
-  
 }
-
-export default App;

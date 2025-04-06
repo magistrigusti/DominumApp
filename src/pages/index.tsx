@@ -1,25 +1,68 @@
-// next/src/pages/_app.tsx
-import type { AppProps } from 'next/app';
-import { TonConnectUIProvider, THEME } from '@tonconnect/ui-react';
-import { UserProvider } from '@/context/UserContext';
-import './index.css'; 
+import { useEffect, useState } from "react";
+import { useTonWallet } from "@tonconnect/ui-react";
+import { useRouter } from "next/router";
+import { LoginPage } from "@/pages/LoginPage/LoginPage";
+import { MenuPage } from "@/pages/MenuPage/MenuPage";
+import { PortalPage } from "@/pages/PortalPage/PortalPage";
+import { DominumPage } from "@/pages/DominumPage/DominumPage";
+import { MagisteriumPage } from "@/pages/MagisteriumPage/MagisteriumPage";
+import { MercatusPage } from "@/pages/MercatusPage/MercatusPage";
+import { UserContainer } from "@/pages/UserPage/UserContainer";
+import '@/styles/index.css'; 
 
-export default function App({ Component, pageProps }: AppProps) {
+export default function Index() {
+  const wallet = useTonWallet();
+  const isConnected = !!wallet?.account?.address;
+
+  const router = useRouter();
+  const [route, setRoute] = useState("/");
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      setRoute(window.location.pathname);
+    }
+  }, []);
+
+  if (!isConnected) {
+    return (
+      <div className="app">
+        <div className="page fullscreen container">
+          <LoginPage />
+        </div>
+      </div>
+    );
+  }
+
+  let PageToRender;
+
+  switch (route) {
+    case "/":
+      PageToRender = <MenuPage />;
+      break;
+    case "/dominum":
+      PageToRender = <DominumPage />;
+      break;
+    case "/magisterium":
+      PageToRender = <MagisteriumPage />;
+      break;
+    case "/mercatus":
+      PageToRender = <MercatusPage />;
+      break;
+    case "/portal":
+      PageToRender = <PortalPage />;
+      break;
+    case "user":
+      PageToRender = <UserContainer />;
+      break;
+    default:
+      if (typeof window !== "undefined") router.replace("/");
+      return null;
+  }
+
   return (
-    <TonConnectUIProvider
-      manifestUrl="https://ton-connect.github.io/demo-dapp-with-react-ui/tonconnect-manifest.json"
-      uiPreferences={{
-        borderRadius: 'none',
-        colorsSet: {
-          [THEME.DARK]: {
-            connectButton: { background: 'orange' }
-          }
-        }
-      }}
-    >
-      <UserProvider>
-        <Component {...pageProps} />
-      </UserProvider>
-    </TonConnectUIProvider>
-  );
+    <div className="app">
+      <div className="page fullscreen container">{PageToRender}</div>
+    </div>
+  )
+
 }
