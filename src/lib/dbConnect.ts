@@ -1,9 +1,12 @@
 import mongoose from "mongoose";
-import { getEnvOrThrow } from "../utils/getEnvOrThrow"; // путь подкорректируй если нужно
+import { getEnvOrThrow } from "../utils/getEnvOrThrow";
 
 const MONGO_URI = getEnvOrThrow("MONGO_URL");
 
-// eslint-disable-next-line no-var
+if (!MONGO_URI || !MONGO_URI.startsWith("mongodb")) {
+  throw new Error("❌ Переменная окружения MONGO_URL указана некорректно");
+}
+
 declare global {
   var mongooseCache: {
     conn: typeof mongoose | null;
