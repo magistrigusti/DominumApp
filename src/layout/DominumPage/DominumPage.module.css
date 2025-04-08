@@ -1,10 +1,21 @@
-.icons_wrapper {
+.page_wrapper {
   display: flex;
-  justify-content: space-around;
-  align-items: center;
-  flex-wrap: wrap; /* на мобилке не уедет за экран */
+  flex-direction: column;
+  min-height: 100vh;
+  background: black; /* или фон твоего приложения */
+}
+
+.icons_wrapper {
   padding: 0.5rem 1rem;
   background-color: rgba(255, 255, 255, 0.05);
+}
+
+.page_content {
+  flex-grow: 1; /* растягивает контент, чтобы футер ушёл вниз */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
 }
 
 .resource_item {

@@ -2,15 +2,15 @@
   margin-top: 20px;
 }
 
-.user_header_wrapper {
+.footer_header_wrapper {
   display: flex;
   align-items: center;
 }
 
-.user_link {
-
+.footer_link {
+  margin: 3px;
 }
 
 .footer_img_button {
-  width: 71px;
+  width: 55px;
 }

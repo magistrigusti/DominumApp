@@ -2,8 +2,9 @@
 .user_header_wrapper {
   display: flex;
   align-items: center;
-  gap: 8px;
-  text-decoration: none;
+  justify-content: space-between;
+  width: 100%; /* важное условие */
+  padding: 0 1rem; /* немного отступов по бокам */
   color: white;
 }
 
@@ -21,4 +22,8 @@
   border-radius: 50%;
   object-fit: cover;
   margin-right: 10px;     
+}
+
+.footer_img_button {
+  width: 40px;
 }
