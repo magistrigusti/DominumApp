@@ -9,31 +9,36 @@ export const DominumContainer = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    if (!wallet?.account?.address || state.address === wallet.account.address) {
+      setLoading(false); // данные уже есть
+      return;
+    }
+  
     const fetchUser = async () => {
-      if (!wallet?.account?.address) return;
-
       try {
         const res = await fetch("/api/user", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ address: wallet.account.address }),
         });
-
+  
         if (res.ok) {
-          const data = await res.json();
-          dispatch({ type: "SET_USER", payload: data });
+          const user = await res.json();
+          dispatch({ type: "SET_USER", payload: user });
         }
       } catch (err) {
         console.error("Ошибка загрузки пользователя:", err);
+      } finally {
+        setLoading(false);
       }
-
-      setLoading(false);
     };
-
+  
     fetchUser();
   }, [wallet?.account?.address]);
+  
 
   if (loading || !state.address) return <div>Загрузка профиля...</div>;
 
   return <DominumPage />;
 };
+                        

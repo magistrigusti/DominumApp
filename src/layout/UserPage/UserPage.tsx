@@ -3,6 +3,7 @@ import { TonConnectButton, useTonWallet, CHAIN, toUserFriendlyAddress } from "@t
 import Link from "next/link";
 import { useUser } from "../../context/UserContext";
 import styles from "./UserPage.module.css";
+import { RESOURCE_CONFIG } from "@/constants/resources";
 
 const formatAddress = (address: string, isTestnet: boolean) => {
   const friendly = toUserFriendlyAddress(address, isTestnet);
