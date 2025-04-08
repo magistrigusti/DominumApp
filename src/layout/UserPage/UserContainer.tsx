@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 import { useTonWallet } from "@tonconnect/ui-react";
 import { useUser } from "../../context/UserContext";
-import { UserPage } from "./UserPage"; // именно саму страницу
+import { UserPage } from "./UserPage"; 
 
 export const UserContainer = () => {
   const wallet = useTonWallet();
-  const [loaded, setLoaded] = useState(false); // следим за загрузкой
+  const [loaded, setLoaded] = useState(false); 
   const { dispatch } = useUser();
 
   useEffect(() => {
