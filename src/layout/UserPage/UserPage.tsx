@@ -53,18 +53,6 @@ export const UserPage = () => {
       </div>
       <ResourcesBar />
 
-      {/* <div className={styles.user_wrapper}>
-        <h2>Профиль</h2>
-        <p><strong>Prestige:</strong> {state.prestige}</p>
-        <p><strong>Food:</strong> {state.food}</p>
-        <p><strong>Wood:</strong> {state.wood}</p>
-        <p><strong>Stone:</strong> {state.stone}</p>
-        <p><strong>Iron:</strong> {state.iron}</p>
-        <p><strong>Gold:</strong> {state.gold}</p>
-        <p><strong>Doubloon:</strong> {state.doubloon}</p>
-        <p><strong>Pearl:</strong> {state.pearl}</p>
-      </div> */}
-
       <div style={{ alignSelf: 'flex-start' }}>
         <Link href="/" style={{
           textDecoration: 'none',

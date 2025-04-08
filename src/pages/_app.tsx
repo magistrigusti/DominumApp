@@ -1,9 +1,8 @@
-// next/src/pages/_app.tsx
 import type { AppProps } from 'next/app';
 import { TonConnectUIProvider, THEME } from '@tonconnect/ui-react';
 import { UserProvider } from '@/context/UserContext';
+import { UserLoader } from '@/components/UserLoader/UserLoader'; // 👈 импортируем
 import '@/styles/index.css';
-
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
@@ -19,7 +18,9 @@ export default function App({ Component, pageProps }: AppProps) {
       }}
     >
       <UserProvider>
-        <Component {...pageProps} />
+        <UserLoader> {/* 👈 оборачиваем весь интерфейс */}
+          <Component {...pageProps} />
+        </UserLoader>
       </UserProvider>
     </TonConnectUIProvider>
   );
