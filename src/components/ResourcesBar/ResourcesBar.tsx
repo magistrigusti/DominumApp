@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+
 import { RESOURCE_CONFIG } from "@/constants/resources";
 import { useUser } from "@/context/UserContext";
 import styles from "./ResourcesBar.module.css";
