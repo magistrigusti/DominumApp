@@ -1,4 +1,4 @@
-import { RESOURCE_CONFIG } from "@/constants/resources";
+import { ResourcesBar } from "@/components/ResourcesBar/ResourcesBar";
 import { useUser } from "@/context/UserContext";
 import styles from "./DominumPage.module.css";
 import { DOMHeader } from "../../components/Headers/DOMHeader";
@@ -12,14 +12,7 @@ export const DominumPage = () => {
       <DOMHeader />
 
       <div className={styles.icons_wrapper}>
-        {RESOURCE_CONFIG.map((res) => (
-          <div className={styles.resource_item} key={res.key}>
-            <img src={res.icon} alt={res.label} />
-
-            <span>{state[res.key]}</span>
-          </div>
-        ))}
-
+      <ResourcesBar />
       </div>
 
       <div className={styles.page_content}>

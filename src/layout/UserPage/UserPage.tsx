@@ -3,7 +3,7 @@ import { TonConnectButton, useTonWallet, CHAIN, toUserFriendlyAddress } from "@t
 import Link from "next/link";
 import { useUser } from "../../context/UserContext";
 import styles from "./UserPage.module.css";
-import { RESOURCE_CONFIG } from "@/constants/resources";
+import { ResourcesBar } from "@/components/ResourcesBar/ResourcesBar";
 
 const formatAddress = (address: string, isTestnet: boolean) => {
   const friendly = toUserFriendlyAddress(address, isTestnet);
@@ -51,8 +51,9 @@ export const UserPage = () => {
           </>
         )}
       </div>
+      <ResourcesBar />
 
-      <div className={styles.user_wrapper}>
+      {/* <div className={styles.user_wrapper}>
         <h2>Профиль</h2>
         <p><strong>Prestige:</strong> {state.prestige}</p>
         <p><strong>Food:</strong> {state.food}</p>
@@ -62,7 +63,7 @@ export const UserPage = () => {
         <p><strong>Gold:</strong> {state.gold}</p>
         <p><strong>Doubloon:</strong> {state.doubloon}</p>
         <p><strong>Pearl:</strong> {state.pearl}</p>
-      </div>
+      </div> */}
 
       <div style={{ alignSelf: 'flex-start' }}>
         <Link href="/" style={{
