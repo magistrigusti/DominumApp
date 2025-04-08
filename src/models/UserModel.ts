@@ -13,7 +13,8 @@ const userSchema = new mongoose.Schema({
   iron: { type: Number, default: 50},
   gold: { type: Number, default: 0},
   doubloon: { type: Number, default: 25},
-  pearl: { type: Number, default: 0}
+  pearl: { type: Number, default: 0},
+  allodium: { type: Number, default: 0}
 });
 
 export const UserModel = mongoose.models.User || mongoose.model("User", userSchema);

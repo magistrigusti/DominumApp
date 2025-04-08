@@ -14,6 +14,7 @@ export interface UserState {
   gold: number;
   doubloon: number;
   pearl: number;
+  allodium: number;
 }
 
 type ResourceField = Exclude<keyof UserState, "address" | "avatar" | "technologies">;
@@ -36,6 +37,7 @@ const initialState: UserState = {
   gold: 0,
   doubloon: 0,
   pearl: 0,
+  allodium: 0,
 };
 
 function reducer(state: UserState, action: UserAction): UserState {
