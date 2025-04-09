@@ -5,32 +5,60 @@ export const ProfileEditor = () => {
   const { state, dispatch } = useUser();
   const [name, setName] = useState(state.name || "");
   const [avatar, setAvatar] = useState(state.avatar || "");
+  const [preview, setPreview] = useState(state.avatar || "");
 
-  const saveProvile = async () => {
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+
+    const reader = new FileReader();
+    reader.onloadend = () => {
+      const base64 = reader.result as string;
+      setAvatar(base64);
+      setPreview(base64);
+    };
+    reader.readAsDataURL(file);
+  };
+
+  const saveProfile = async () => {
     const res = await fetch("/api/user/update", {
       method: "PUT",
-      headers: {"Context-Type": "pplication/json"},
-      body: JSON.stringify({address: state.address, name, avatar}),
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ address: state.address, name, avatar }),
     });
 
     if (res.ok) {
-      const updateUser = await res.json();
-      dispatch({type: "SET_USER", payload: updateUser});
+      const updatedUser = await res.json();
+      dispatch({ type: "SET_USER", payload: updatedUser });
     }
   };
 
   return (
-    <div>
-      <input value={name}
-        onChange={(e) => setName(e.target.value)}
-        placeholder="Name"
-      />
+    <div style={{ padding: 16, border: '1px solid gray', borderRadius: 8 }}>
+      <h3>Редактирование профиля</h3>
 
-      <input value={avatar}
-        onChange={(e) => setAvatar(e.target.value)}
-        placeholder=""
-      />
+      <label>
+        Имя:
+        <input
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          placeholder="Ваше имя"
+          style={{ display: "block", marginBottom: 10 }}
+        />
+      </label>
+
+      <label>
+        Аватар:
+        <input type="file" accept="image/*" onChange={handleFileChange} />
+      </label>
+
+      {preview && (
+        <div style={{ margin: "10px 0" }}>
+          <img src={preview} alt="Превью" width={100} />
+        </div>
+      )}
+
+      <button onClick={saveProfile}>Сохранить</button>
     </div>
-  )
-
-}
+  );
+};
