@@ -35,11 +35,11 @@ export const UserPage = () => {
     <div className={styles.user_container}>
       <div className={styles.user_header_wrapper}>
         <img className={styles.user_img}
-          src="/icons/user-icon.png"
+          src={state.avatar}
           alt="User Profile"
         />
 
-        <p>{wallet?.account?.address ? "Magistru" : "Не подключено"}</p>
+        <p>{wallet?.account?.address ? <p>{state.name}</p> : "Не подключено"}</p>
       </div>
 
       <div style={{ textAlign: 'center' }}>

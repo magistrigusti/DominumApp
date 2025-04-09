@@ -3,6 +3,7 @@ import mongoose from "mongoose";
 const userSchema = new mongoose.Schema({
   address: { type: String, required: true, unique: true},
   avatar: { type: String, required: true},
+  name: { type: String, default: 'Capitan' },
   prestige: { type: String, required: true},
   levelPrestige: { type: Number, default: 0},
   prestigeProgress: { type: Number, default: 0},

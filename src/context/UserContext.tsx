@@ -3,6 +3,7 @@ import React, { createContext, useContext, useReducer } from "react";
 export interface UserState {
   address: string;
   avatar?: string;
+  name?: string;
   prestige: number;
   levelPrestige: number;
   prestigeProgress: number;
