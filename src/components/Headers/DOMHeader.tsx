@@ -17,7 +17,7 @@ export const DOMHeader = () => {
         </Link>
 
         <Link className={styles.user_link} href="/">
-          <img className={styles.footer_img_button} src="/button/backButton.jpg" alt="" />
+          <img className={styles.header_img_button} src="/button/backButton.jpg" alt="" />
         </Link>
       </div>
     </div>

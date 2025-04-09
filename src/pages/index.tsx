@@ -8,6 +8,7 @@ import { DominumPage } from "@/layout/DominumPage/DominumPage";
 import { MagisteriumPage } from "@/layout/MagisteriumPage/MagisteriumPage";
 import { MercatusPage } from "@/layout/MercatusPage/MercatusPage";
 import { UserContainer } from "@/layout/UserPage/UserContainer";
+import { ProfileEditor } from "@/layout/UserPage/ProfileEditor/ProfileEditor";
 
 export default function Index() {
   const wallet = useTonWallet();
@@ -63,6 +64,8 @@ export default function Index() {
     case "/user":
       PageToRender = <UserContainer />;
       break;
+    case "/user/editor":
+      PageToRender= <ProfileEditor />;
     default:
       if (typeof window !== "undefined") router.replace("/");
       return null;

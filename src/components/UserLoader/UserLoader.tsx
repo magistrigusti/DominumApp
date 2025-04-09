@@ -12,7 +12,7 @@ export const UserLoader = ({ children }: { children: React.ReactNode }) => {
       if (!wallet?.account?.address) return; // 👈 защита от раннего вызова
 
       try {
-        const res = await fetch("/api/user", {
+        const res = await fetch("/api/user/user", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ address: wallet.account.address }),

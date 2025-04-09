@@ -34,12 +34,23 @@ export const UserPage = () => {
   return (
     <div className={styles.user_container}>
       <div className={styles.user_header_wrapper}>
-        <img className={styles.user_img}
-          src={state.avatar}
-          alt="User Profile"
-        />
-
-        <p>{wallet?.account?.address ? <p>{state.name}</p> : "Не подключено"}</p>
+        <Link className={styles.user_link} href="/user">
+          <img
+            className={styles.user_img}
+            src={state.avatar}
+            alt="User Profile"
+          />
+          <p>{wallet?.account?.address ? <p>{state.name}</p> : "Не подключено"}</p>
+        </Link>
+        
+        <Link className={styles.user_link} href="/user/editor">
+          <img
+            className={styles.edit_img}
+            src="/icons/edit-user.png"
+            alt=" Edit User Profile"
+          />
+          <p>{wallet?.account?.address ? <p>{state.name}</p> : "Не подключено"}</p>
+        </Link>
       </div>
 
       <div style={{ textAlign: 'center' }}>
@@ -54,15 +65,8 @@ export const UserPage = () => {
       <ResourcesBar />
 
       <div style={{ alignSelf: 'flex-start' }}>
-        <Link href="/" style={{
-          textDecoration: 'none',
-          color: '#fff',
-          fontSize: '1.2rem',
-          display: 'flex',
-          alignItems: 'center',
-          gap: '0.5rem',
-        }}>
-          <span style={{ fontSize: '1.5rem' }}>←</span> Назад
+        <Link className={styles.user_link} href="/">
+          <img className={styles.back_button} src="/button/backButton.jpg" alt="" />
         </Link>
       </div>
 
