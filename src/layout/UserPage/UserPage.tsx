@@ -34,32 +34,29 @@ export const UserPage = () => {
   return (
     <div className={styles.user_container}>
       <div className={styles.user_header_wrapper}>
-        <Link className={styles.user_link} href="/user">
-          <img
-            className={styles.user_img}
+
+          <img className={styles.user_img}
             src={state.avatar}
             alt="User Profile"
           />
-          <p>{wallet?.account?.address ? <p>{state.name}</p> : "Не подключено"}</p>
-        </Link>
+          <div>{wallet?.account?.address ? <p>{state.name}</p> : "Не подключено"}</div>
         
-        <Link className={styles.user_link} href="/user/editor">
+        <Link className={styles.user_link} href="/user/profileEditor">
           <img
             className={styles.edit_img}
             src="/icons/edit-user.png"
             alt=" Edit User Profile"
           />
-          <p>{wallet?.account?.address ? <p>{state.name}</p> : "Не подключено"}</p>
         </Link>
       </div>
 
       <div style={{ textAlign: 'center' }}>
         {wallet && (
-          <>
+          <div>
             <p><strong>Кошелёк:</strong> {formatAddress(wallet.account.address, wallet.account.chain === CHAIN.TESTNET)}</p>
             <p><strong>Сеть:</strong> {wallet.account.chain === CHAIN.TESTNET ? "Testnet" : "Mainnet"}</p>
             <p><strong>Баланс:</strong> {tonBalance ?? 'Загрузка...'}</p>
-          </>
+          </div>
         )}
       </div>
       <ResourcesBar />

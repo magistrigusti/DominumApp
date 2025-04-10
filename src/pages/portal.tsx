@@ -1,11 +1,11 @@
-// страница /MagisteriumPage
-import { MagisteriumPage } from "@/layout/MagisteriumPage/MagisteriumPage";
+// страница /PortalPage
+import { PortalPage } from "@/layout/PortalPage/PortalPage";
 
 export default function DominumRoute() {
   return (
     <div className="app">
       <div className="page fullscreen container">
-        < MagisteriumPage />
+        < PortalPage />
       </div>
     </div>
   );
