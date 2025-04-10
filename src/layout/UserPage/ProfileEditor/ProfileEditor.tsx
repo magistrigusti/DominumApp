@@ -5,8 +5,8 @@ import styles from "./ProfileEditor.module.css";
 
 export const ProfileEditor = () => {
   const { state, dispatch } = useUser();
-  const [name, setName] = useState(state.name || "");
-  const [avatar, setAvatar] = useState(state.avatar || "");
+  const [name, setName] = useState(state.name || "Capitan");
+  const [avatar, setAvatar] = useState(state.avatar || "/icons/user-icon.png");
   const [preview, setPreview] = useState(state.avatar || "");
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {

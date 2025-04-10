@@ -1,6 +1,7 @@
 
 import { Footer } from "../../components/DOMFooter/Footer";
 import styles from "./LoginPage.module.css";
+import { TonConnectButton} from "@tonconnect/ui-react";
 
 export const LoginPage = () => {
   return (
@@ -17,6 +18,9 @@ export const LoginPage = () => {
         </div>
 
         <Footer />
+        <div style={{ margin: "auto" }}>
+        <TonConnectButton />
+      </div>
       </div>
     </div>
 
