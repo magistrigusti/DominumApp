@@ -11,6 +11,7 @@
   "dependencies": {
     "@ton-api/client": "^0.4.0",
     "@ton/core": "^0.60.1",
+    "@ton/crypto": "^3.3.0",
     "@tonconnect/ui-react": "^2.1.0",
     "mongodb": "^6.15.0",
     "mongoose": "^8.13.2",

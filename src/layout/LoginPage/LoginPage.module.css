@@ -9,3 +9,10 @@
 .login_text {
   font-size: 18px;
 }
+
+.login_bg_wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background: url("/dominum/backGround/bg-login-2.jpg");
+}
