@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background: black; /* или фон твоего приложения */
+  background: url("../../../public/dominum/backGround/dominum_bg_mine.jpg");
 }
 
 .icons_wrapper {
@@ -28,7 +28,6 @@
   font-size: 0.9rem;
 }
 
-.resource_item img {
-  width: 24px;
-  height: 24px;
+.bg_img {
+  height: 100%;
 }

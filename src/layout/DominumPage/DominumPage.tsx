@@ -1,4 +1,4 @@
-import { ResourcesBar } from "@/components/ResourcesBar/ResourcesBar";
+import { ResourcesBar } from "@/components/Resources/ResourcesBar";
 import { useUser } from "@/context/UserContext";
 import styles from "./DominumPage.module.css";
 import { DOMHeader } from "../../components/Headers/DOMHeader";
@@ -12,11 +12,11 @@ export const DominumPage = () => {
       <DOMHeader />
 
       <div className={styles.icons_wrapper}>
-      <ResourcesBar />
+        <ResourcesBar />
       </div>
 
       <div className={styles.page_content}>
-        <img src="/Dominum/ship-1.jpg" alt="icon" />
+        <img className={styles.bg_img} src="/Dominum/ship-1.jpg" alt="icon" />
       </div>
       <DOMFooter />
     </div>

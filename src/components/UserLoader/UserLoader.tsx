@@ -5,7 +5,7 @@ import { useUser } from "@/context/UserContext";
 export const UserLoader = ({ children }: { children: React.ReactNode }) => {
   const wallet = useTonWallet();
   const { dispatch } = useUser();
-  const [loaded, setLoaded] = useState(false);
+  const [loaded, setLoaded] = useState(false); 
 
   useEffect(() => {
     const fetchUser = async () => {

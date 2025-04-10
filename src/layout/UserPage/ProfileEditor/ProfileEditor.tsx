@@ -1,5 +1,7 @@
 import { useUser } from "@/context/UserContext";
 import { useState } from "react";
+import Link from "next/link";
+import styles from "./ProfileEditor.module.css";
 
 export const ProfileEditor = () => {
   const { state, dispatch } = useUser();
@@ -59,6 +61,12 @@ export const ProfileEditor = () => {
       )}
 
       <button onClick={saveProfile}>Сохранить</button>
+
+      <div style={{ alignSelf: 'flex-start' }}>
+        <Link className={styles.user_link} href="/">
+          <img className={styles.back_button} src="/button/backButton.jpg" alt="" />
+        </Link>
+      </div>
     </div>
   );
 };
