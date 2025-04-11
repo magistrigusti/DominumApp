@@ -1,4 +1,4 @@
-import { useUser } from "../../../context/UserContext";
+import { useUser } from "../../context/UserContext";
 import { useState } from "react";
 import Link from "next/link";
 import styles from "./ProfileEditor.module.css";

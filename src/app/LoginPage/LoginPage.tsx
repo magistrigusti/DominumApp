@@ -1,5 +1,5 @@
 
-import { Footer } from "../../../components/DOMFooter/Footer";
+import { Footer } from "../../components/DOMFooter/Footer";
 import styles from "./LoginPage.module.css";
 import { TonConnectButton} from "@tonconnect/ui-react";
 

@@ -3,14 +3,15 @@
 import { useEffect, useState } from "react";
 import { useTonWallet } from "@tonconnect/ui-react";
 import { useRouter } from 'next/navigation';
-import { LoginPage } from "@/app/pages/LoginPage/LoginPage";
-import { MenuContainer } from "@/app/pages/MenuPage/MenuContainer";
-import { PortalPage } from "@/app/pages/PortalPage/PortalPage";
-import { DominumPage } from "@/app/pages/DominumPage/DominumPage";
-import { MagisteriumPage } from "@/app/pages/MagisteriumPage/MagisteriumPage";
-import { MercatusPage } from "@/app/pages/MercatusPage/MercatusPage";
-import { UserContainer } from "@/app/pages/UserPage/UserContainer";
-import { ProfileEditor } from "@/app/pages/UserPage/ProfileEditor/ProfileEditor";
+
+import { LoginPage } from "@/app/LoginPage/LoginPage";
+import { MenuContainer } from "@/app/MenuPage/MenuContainer";
+import { PortalPage } from "@/app/PortalPage/PortalPage";
+import { DominumPage } from "@/app/DominumPage/DominumPage";
+import { MagisteriumPage } from "@/app/MagisteriumPage/MagisteriumPage";
+import { MercatusPage } from "@/app/MercatusPage/MercatusPage";
+import { UserContainer } from "@/app/UserPage/UserContainer";
+import { ProfileEditor } from "@/app/UserPage/ProfileEditor/ProfileEditor";
 
 export default function Home() {
   const wallet = useTonWallet();
@@ -32,7 +33,7 @@ export default function Home() {
           <div className="loader">Loading....</div>
         </div>
       </div>
-    )
+    );
   }
 
   if (!isConnected) {
@@ -67,7 +68,8 @@ export default function Home() {
       PageToRender = <UserContainer />;
       break;
     case "/user/editor":
-      PageToRender= <ProfileEditor />;
+      PageToRender = <ProfileEditor />;
+      break;
     default:
       if (typeof window !== "undefined") router.replace("/");
       return null;
@@ -77,6 +79,5 @@ export default function Home() {
     <div className="app">
       <div className="page fullscreen container">{PageToRender}</div>
     </div>
-  )
-
+  );
 }

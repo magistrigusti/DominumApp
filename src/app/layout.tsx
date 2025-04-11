@@ -1,26 +1,20 @@
-
-'use client';
-import type { AppProps } from 'next/app';
-import { TonConnectUIProvider, THEME } from '@tonconnect/ui-react';
-import { UserProvider } from '@/app/context/UserContext';
 import '@/styles/index.css';
+import type { ReactNode } from 'react';
+import { Providers } from './index'; // 👈 обязательно правильный путь
 
-export default function App({ Component, pageProps }: AppProps) {
+export const metadata = {
+  title: 'Dominum',
+  description: 'dApp с поддержкой TON',
+};
+
+export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <TonConnectUIProvider
-      manifestUrl="https://ton-connect.github.io/demo-dapp-with-react-ui/tonconnect-manifest.json"
-      uiPreferences={{
-        borderRadius: 'none',
-        colorsSet: {
-          [THEME.DARK]: {
-            connectButton: { background: 'orange' }
-          }
-        }
-      }}
-    >
-      <UserProvider>
-        <Component {...pageProps} />
-      </UserProvider>
-    </TonConnectUIProvider>
+    <html lang="ru">
+      <body>
+        <Providers>
+          {children}
+        </Providers>
+      </body>
+    </html>
   );
 }

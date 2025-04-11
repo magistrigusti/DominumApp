@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { TonConnectButton, useTonWallet, CHAIN, toUserFriendlyAddress } from "@tonconnect/ui-react";
 import Link from "next/link";
-import { useUser } from "../../context/UserContext";
+import { useUser } from "../context/UserContext";
 import styles from "./UserPage.module.css";
 import { ResourcesBar } from "@/components/Resources/ResourcesBar";
 
