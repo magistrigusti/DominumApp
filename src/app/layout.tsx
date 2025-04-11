@@ -1,6 +1,6 @@
 import '@/styles/index.css';
 import type { ReactNode } from 'react';
-import { Providers } from './index'; // 👈 обязательно правильный путь
+import { Providers } from './providers'; // 👈 обязательно правильный путь
 
 export const metadata = {
   title: 'Dominum',
@@ -9,7 +9,7 @@ export const metadata = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="ru">
+    <html lang="en">
       <body>
         <Providers>
           {children}

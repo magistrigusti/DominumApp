@@ -1,0 +1,60 @@
+.swapWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  // overflow-y: auto;
+  padding-right: 4px;
+}
+
+.bottomWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.modalColumn {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 6px;
+}
+
+.modalContent {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.modalContentSwap {
+  position: absolute;
+  right: 50%;
+  top: 50%;
+  z-index: 50;
+  transform: translate(50%, -50%);
+}
+
+.swapButtonWrapper {
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 50%;
+  background: var(--tg-theme-button-color);
+  border: 2px solid var(--tg-theme-button-text-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  svg {
+    stroke: var(--tg-theme-button-text-color);
+    path {
+      stroke: var(--tg-theme-button-text-color);
+    }
+  }
+}
+
+.swapButtonWrapper:active {
+  outline: 1px solid rgb(var(--placeholder-tertiary));
+}

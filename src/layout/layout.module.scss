@@ -1,0 +1,35 @@
+.wrapper {
+  margin: 0 auto;
+  padding: 0 30px;
+  position: relative;
+}
+
+.headerClass {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  left: 0;
+  z-index: 100; 
+  top: 0;
+  right: 0;
+  padding: 0 30px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  background: transparent;
+}
+
+.content {
+  padding: 100px 0 0 0;
+}
+
+.logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}

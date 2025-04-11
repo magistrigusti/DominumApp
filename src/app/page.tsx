@@ -3,9 +3,8 @@
 import { useEffect, useState } from "react";
 import { useTonWallet } from "@tonconnect/ui-react";
 import { useRouter } from 'next/navigation';
-
 import { LoginPage } from "@/app/LoginPage/LoginPage";
-import { MenuContainer } from "@/app/MenuPage/MenuContainer";
+import MenuPageRoute from "@/app/MenuPage/page";
 import { PortalPage } from "@/app/PortalPage/PortalPage";
 import { DominumPage } from "@/app/DominumPage/DominumPage";
 import { MagisteriumPage } from "@/app/MagisteriumPage/MagisteriumPage";
@@ -50,7 +49,7 @@ export default function Home() {
 
   switch (route) {
     case "/":
-      PageToRender = <MenuContainer />;
+      PageToRender = <MenuPageRoute />;
       break;
     case "/dominum":
       PageToRender = <DominumPage />;

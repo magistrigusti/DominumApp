@@ -1,0 +1,269 @@
+/*--------------------search--------------------*/
+
+.search {
+    border-radius: 20px;
+    border: 0px;
+    background: var(--tg-theme-secondary-bg-color);
+    color: var(--tg-theme-text-color);
+    padding: 16px 45px 16px 50px;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; /* 125% */
+    letter-spacing: -0.5px;
+  }
+  
+  .searchInner {
+    position: relative;
+    margin-bottom: 8px;
+  }
+  
+  .searchIcon {
+    position: absolute;
+    left: 17px;
+    top: 50%;
+    width: 24px;
+    height: 24px;
+    transform: translateY(-50%);
+    > path {
+      stroke: #98989E;
+    }
+  }
+  
+  .scan {
+    position: absolute;
+    right: 20px;
+    top: 52%;
+    width: 20px;
+    height: 20px;
+    transform: translateY(-50%);
+    cursor: pointer;
+  }
+  
+  /*--------------------/search--------------------*/
+  
+  .assetsTitle {
+    font-size: 15px;
+    line-height: 138%;
+    letter-spacing: 0.07px;
+    color: #8E8E93;
+  }
+  
+  .searchClear {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    outline: none;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+  }
+  
+  .searchClear > div {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /*--------------------token--------------------*/
+
+  .seleсtWrapper {
+    height: calc(100% - 80px);
+    padding: 16px;
+    background: rgba(var(--secondary-bg), 0.40);
+    border-radius: 24px 24px 0 0;
+  }
+  
+  .tokensList {
+    max-height: 100%;
+    overflow-y: auto;
+    padding-bottom: 72px;
+  }
+    
+  .tokenItem {
+    padding: 10px 10px 8px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    position: relative;
+    width: 100%;
+    cursor: pointer;
+    border-radius: 24px;
+    margin-bottom: 4px;
+  }
+
+  .tokenItem:active {
+    background: rgba(var(--placeholder-tertiary), 0.2);
+}
+
+/* .tokenItem:hover {
+  background: rgba(var(--placeholder-tertiary), 0.2);
+} */
+
+  
+  .tokenItem::before {
+    content: '';
+    position: absolute;
+    width: calc(100% - 51.1px);
+    height: 0.1px;
+    bottom: -2px;
+    right: 0;
+    background: rgba(116, 116, 128, 0.4);
+  }
+  
+  .tokenItemBody {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .usdPriseWrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    gap: 5px;
+  }
+  .upChange {
+    color: #34C759 !important;
+  }
+  .downChange {
+    color: #FF3B30 !important;
+  }
+
+  .tokenItemInner {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: calc(100% - 60px);
+  }
+  
+  .tokenColumn {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .tokenItemBody > img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+  }
+  
+  .tokenItemToken {
+    font-size: 17px;
+    line-height: 129%;
+    letter-spacing: 0.43px;
+    color: var(--tg-theme-text-color);
+  }
+
+  .tokenItemAmountRight {
+    color: var(--tg-theme-text-color);
+    text-align: right;
+  }
+
+  .tokenItemPrice {
+    color: var(--tg-theme-hint-color);
+    font-size: 13px;
+    line-height: 19.5px;
+  }
+  .tokenItemPriceChange {
+    color: #8E8E93;
+    font-size: 11px;
+    line-height: 19.5px;
+  }
+  
+  /*--------------------/token--------------------*/
+  
+  .noAssets {
+    height: 30vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -20px;
+    text-align: center;
+    font-size: 21px;
+    font-weight: 540;
+    color: var(--tg-theme-text-color);
+  }
+
+/* ------------- */
+.modalTop {
+  display: grid;
+  grid-template-columns: 0.5fr 2fr 0.5fr;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 24px;
+}
+
+.modalTopButton {
+  color: var(--tg-theme-button-color);
+  font-size: 16.5px;
+  font-weight: 540;
+  letter-spacing: 0.43px;
+  background: transparent;
+  cursor: pointer;
+  border: none;
+  z-index: 305;
+  padding: 4px;
+  border-radius: 8px;
+  transition: all 0.3s ease 0s;
+}
+
+.modalTopButton > svg {
+  cursor: pointer;
+  > path {
+    stroke: var(--tg-theme-button-color);
+  }
+}
+
+.modalTopButton > svg:hover {
+  color: var(--tg-theme-button-color);
+}
+
+.modalTopButton:first-child {
+  justify-content: flex-start;
+}
+
+.modalTopButton:active {
+  background: var(--tg-theme-secondary-bg-color);
+}
+
+/* .modalTopButton:hover {
+  background: rgba(var(--placeholder-tertiary), 0.2);
+} */
+
+.modalTitle {
+  text-align: center;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 510;
+  line-height: 32px; /* 100% */
+  letter-spacing: -0.264px;
+  color: var(--tg-theme-text-color);
+  margin-bottom: 24px;
+}
+
+.wrapper {
+  position: relative;
+  z-index: 301;
+  overflow-x: hidden;
+}
+
+.modal {
+  height: 95%;
+  overflow-y: hidden;
+  background: var(--tg-theme-bg-color);
+  z-index: 301;
+  overflow-x: hidden;
+}
