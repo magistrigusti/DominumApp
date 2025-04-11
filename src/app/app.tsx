@@ -12,7 +12,7 @@ import { MercatusPage } from "@/app/pages/MercatusPage/MercatusPage";
 import { UserContainer } from "@/app/pages/UserPage/UserContainer";
 import { ProfileEditor } from "@/app/pages/UserPage/ProfileEditor/ProfileEditor";
 
-export default function App() {
+export default function Home() {
   const wallet = useTonWallet();
   const isConnected = !!wallet?.account?.address;
 
