@@ -41,8 +41,8 @@ export const UserPage = () => {
   return (
     <div className={styles.user_container}>
       <div className={styles.user_header_wrapper}>
-        <img className={styles.user_img} src={state.avatar} alt="User Profile" />
-        <div>{wallet?.account?.address ? <p>{state.name}</p> : "Не подключено"}</div>
+        <img className={styles.user_img} src="/icons/user-icon.png" alt="User Profile" />
+        <div>{wallet?.account?.address ? <p>Gapitan Jack</p> : "Не подключено"}</div>
         <Link className={styles.user_link} href="/user/editor">
           <img className={styles.edit_img} src="/icons/edit-user.png" alt="Edit User Profile" />
         </Link>
