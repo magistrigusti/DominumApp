@@ -1,6 +1,8 @@
+
+'use client';
 import type { AppProps } from 'next/app';
 import { TonConnectUIProvider, THEME } from '@tonconnect/ui-react';
-import { UserProvider } from './context/UserContext';
+import { UserProvider } from '@/app/context/UserContext';
 import '@/styles/index.css';
 
 export default function App({ Component, pageProps }: AppProps) {
@@ -17,7 +19,7 @@ export default function App({ Component, pageProps }: AppProps) {
       }}
     >
       <UserProvider>
-          <Component {...pageProps} />
+        <Component {...pageProps} />
       </UserProvider>
     </TonConnectUIProvider>
   );
