@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
 import styles from "./MenuPage.module.css";
-import { DOMHeader } from "../../components/Headers/DOMHeader";
+import { DOMHeader } from "../../../components/Headers/DOMHeader";
 
 export const MenuPage = () => {
   const router = useRouter();

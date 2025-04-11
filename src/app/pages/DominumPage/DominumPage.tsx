@@ -1,8 +1,8 @@
 import { ResourcesBar } from "@/components/Resources/ResourcesBar";
-import { useUser } from "@/context/UserContext";
+import { useUser } from "../../context/UserContext";
 import styles from "./DominumPage.module.css";
-import { DOMHeader } from "../../components/Headers/DOMHeader";
-import { DOMFooter } from "../../components/DOMFooter/DOMFooter";
+import { DOMHeader } from "../../../components/Headers/DOMHeader";
+import { DOMFooter } from "../../../components/DOMFooter/DOMFooter";
 import { FoodBonus } from "@/components/Resources/ResourcesBonus/FoodBonus";
 
 export const DominumPage = () => {

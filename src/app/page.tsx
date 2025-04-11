@@ -1,6 +1,8 @@
+'use client';
+
 import { useEffect, useState } from "react";
 import { useTonWallet } from "@tonconnect/ui-react";
-import { useRouter } from "next/router";
+import { useRouter } from 'next/navigation';
 import { LoginPage } from "@/app/pages/LoginPage/LoginPage";
 import { MenuContainer } from "@/app/pages/MenuPage/MenuContainer";
 import { PortalPage } from "@/app/pages/PortalPage/PortalPage";
@@ -10,7 +12,7 @@ import { MercatusPage } from "@/app/pages/MercatusPage/MercatusPage";
 import { UserContainer } from "@/app/pages/UserPage/UserContainer";
 import { ProfileEditor } from "@/app/pages/UserPage/ProfileEditor/ProfileEditor";
 
-export default function Index() {
+export default function App() {
   const wallet = useTonWallet();
   const isConnected = !!wallet?.account?.address;
 

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useUser } from "@/context/UserContext";
+import { useUser } from "../../../app/context/UserContext";
 
 const TWO_HOURS = 1000 * 60 * 60 * 2;
 

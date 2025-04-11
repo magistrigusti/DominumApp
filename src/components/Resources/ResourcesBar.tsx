@@ -1,6 +1,6 @@
 
 import { RESOURCE_CONFIG } from "@/constants/resources";
-import { useUser } from "@/context/UserContext";
+import { useUser } from "../../app/context/UserContext";
 import styles from "./ResourcesBar.module.css";
 
 export const ResourcesBar = () => {
