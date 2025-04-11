@@ -1,14 +1,14 @@
 import { useEffect, useState } from "react";
 import { useTonWallet } from "@tonconnect/ui-react";
 import { useRouter } from "next/router";
-import { LoginPage } from "@/layout/LoginPage/LoginPage";
-import { MenuContainer } from "@/layout/MenuPage/MenuContainer";
-import { PortalPage } from "@/layout/PortalPage/PortalPage";
-import { DominumPage } from "@/layout/DominumPage/DominumPage";
-import { MagisteriumPage } from "@/layout/MagisteriumPage/MagisteriumPage";
-import { MercatusPage } from "@/layout/MercatusPage/MercatusPage";
-import { UserContainer } from "@/layout/UserPage/UserContainer";
-import { ProfileEditor } from "@/layout/UserPage/ProfileEditor/ProfileEditor";
+import { LoginPage } from "@/app/pages/LoginPage/LoginPage";
+import { MenuContainer } from "@/app/pages/MenuPage/MenuContainer";
+import { PortalPage } from "@/app/pages/PortalPage/PortalPage";
+import { DominumPage } from "@/app/pages/DominumPage/DominumPage";
+import { MagisteriumPage } from "@/app/pages/MagisteriumPage/MagisteriumPage";
+import { MercatusPage } from "@/app/pages/MercatusPage/MercatusPage";
+import { UserContainer } from "@/app/pages/UserPage/UserContainer";
+import { ProfileEditor } from "@/app/pages/UserPage/ProfileEditor/ProfileEditor";
 
 export default function Index() {
   const wallet = useTonWallet();
